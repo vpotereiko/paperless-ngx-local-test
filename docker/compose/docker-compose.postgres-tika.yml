@@ -1,4 +1,4 @@
-# Docker Compose file for running paperless from the docker container registry.
+# +++Adminer+++ Docker Compose file for running paperless from the docker container registry.
 # This file contains everything paperless needs to run.
 # Paperless supports amd64, arm and arm64 hardware.
 #
@@ -31,6 +31,12 @@
 # documentation.
 
 services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
   broker:
     image: docker.io/library/redis:7
     restart: unless-stopped
